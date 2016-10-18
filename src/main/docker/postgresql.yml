@@ -1,0 +1,12 @@
+version: '2'
+services:
+    pgsqltest-postgresql:
+        container_name: pgsqltest-postgresql
+        image: postgres:9.5.4
+        # volumes:
+        #     - ~/volumes/jhipster/pgsqltest/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=pgsqltest
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

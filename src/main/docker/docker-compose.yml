@@ -1,0 +1,10 @@
+version: '2'
+services:
+    pgsqltest-postgresql:
+        extends:
+            file: postgresql.yml
+            service: pgsqltest-postgresql
+    pgsqltest-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: pgsqltest-elasticsearch

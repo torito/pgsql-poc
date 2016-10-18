@@ -1,0 +1,22 @@
+version: '2'
+services:
+    pgsqltest-app:
+        image: pgsqltest
+        external_links:
+            - pgsqltest-postgresql:postgresql
+            - pgsqltest-elasticsearch:elasticsearch
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/pgsqltest
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=localhost:9300
+        ports:
+            - 8080:8080
+    pgsqltest-postgresql:
+        extends:
+            file: postgresql.yml
+            service: pgsqltest-postgresql
+    pgsqltest-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: pgsqltest-elasticsearch

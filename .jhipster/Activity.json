@@ -1,0 +1,15 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "user_code",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20161018193149",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "activity",
+    "pagination": "pager"
+}
